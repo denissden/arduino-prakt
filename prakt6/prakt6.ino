@@ -5,7 +5,7 @@ int latchPin = 2;  // к выводу 12 регистра (ST_CP)
 int clockPin = 1;  // к выводу 11 регистра (SH_CP)
 
 
-byte leds = 0b00011011;
+byte leds = 0b11111111;
 byte number = 0;
 
 void setup() 
@@ -27,7 +27,7 @@ byte leds2 = 0;
 void loop() 
 {
   int input = Serial.parseInt();
-  if (input > 0 && input < 8){
+  if (input > 0 && input <= 8){
     leds = 0;
     bitSet(leds, input - 1);
   }
